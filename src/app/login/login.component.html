@@ -1,0 +1,17 @@
+<body>
+<div class="login-container">
+  <h2>Anmelden</h2>
+  <form class="login-form" (submit)="login()">
+    <div class="form-group">
+      <label for="username">Benutzername</label>
+      <input type="text" [(ngModel)]="username" name="username" id="username" placeholder="Geben Sie den Benutzername ein">
+    </div>
+    <div class="form-group">
+      <label for="password">Passwort</label>
+      <input type="password" [(ngModel)]="password" name="password" id="password" placeholder="Geben Sie ihr Passwort ein">
+    </div>
+    <button type="submit" class="btn-login">Login</button>
+    <p>Haben Sie keinen Konto? <a (click)="goToRegistration()">Registerieren</a></p>
+  </form>
+</div>
+</body>

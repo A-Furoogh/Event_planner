@@ -1,0 +1,54 @@
+<body>
+  <div class="wohlpage">
+    <h2>Willkommen, {{ username }}!</h2>
+    <h3>Ihre Events:</h3>
+    <div class="secondWohlpage">
+    <ul>
+      <li *ngFor="let event of events">
+        <div id="ersterTeil">
+          <p>Event-ID: {{ event.id }}</p>
+          <p>Event-Name: {{ event.eventName }}</p>
+          <p>Event-Datum: {{ event.eventDate | date:'dd-MM-yyy' }}</p>
+          <p>Gesamtkosten: {{ event.totalCost }}</p>
+          <p>Anzahl Gäste: {{ event.totalGuests}}</p>
+
+          <h4>Event-Anschrift</h4>
+          <p>Event Ort: {{ event.location?.locationName }}</p>
+          <p>Event-Adresse: {{ event.location?.address }}</p>
+          <p>Kapazität: {{ event.location?.capacity }}</p>
+          <p>Eventsort schon bezahlt?: {{ event.location?.isPaid | boolean }}</p>
+      </div>
+      <div id="GastTeil">
+        <h4 style="text-align: center; font-size: 26px;">Gäste</h4>
+
+        <ul>
+          <div class="scrollable-container">
+            <li *ngFor="let guest of event.guests">
+              <p>Guest-Name: {{ guest.guestName }}</p>
+              <p>Adresse: {{ guest.address }}</p>
+              <p>HandyNr.: {{ guest.phone }}</p>
+              <p>Anzahl-Begleiter: {{ guest.attendantNumber }}</p>
+            </li>
+          </div>
+        </ul>
+      </div>
+      <div id="KostenTeil">
+        <h4 style="text-align: center; font-size: 26px;">Kosten</h4>
+        
+        <ul>
+          <div class="scrollable-container">
+            <li *ngFor="let cost of event.costs">
+              <p>Ausgabe für: {{ cost.costName }}</p>
+              <p>Kosten: {{ cost.costAmount }}</p>
+              <p>Bezahlt?: {{ cost.isPaid | boolean }}</p>
+            </li>
+          </div>
+        </ul>
+      </div>
+      </li>
+    </ul>
+    <p *ngIf="events.length === 0" class="no-events">Noch kein Event!</p>
+    <button (click)="gotoNewEvent()" class="new-event-button">Neues Event erstellen</button>
+    </div>
+  </div>
+</body>

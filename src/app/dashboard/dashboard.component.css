@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("forth.jpg");
+  background-size: cover;
+  background-repeat: repeat-y;
+  background-position: center;
+  font-family: Arial, sans-serif;
+  height: auto;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.wohlpage {
+  background-color: rgba(124, 59, 59, 0.8);
+  max-width: 600px;
+  padding: 10px;
+  border-radius: 10px;
+  color: rgb(52, 116, 171);
+  text-align: center;
+}
+.secondWohlpage {
+  background-color: rgba(0, 0, 0, 0.8);
+  max-width: 600px;
+  padding: 10px;
+  border-radius: 10px;
+  color: aliceblue;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 36px;
+  color: aliceblue;
+  text-decoration: aliceblue;
+}
+
+h3 {
+  margin-top: 10px;
+  color: aliceblue;
+  font-size: 26px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: flex;
+  align-items: center;
+  text-align: left;
+}
+
+li {
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 5px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+li:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+a {
+  text-decoration: none;
+  color: #ccc;
+}
+
+a:hover {
+  color: #fff;
+}
+
+p {
+  margin: 2px 4px;
+}
+
+.no-events {
+  color: #ccc;
+  margin-top: 10px;
+}
+
+.new-event-button {
+  margin-top: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 24px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.new-event-button:hover {
+  background-color: #666;
+}
+#ersterTeil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color: #4f4b4b;
+  padding: 10px;
+  border-radius: 5px;
+}
+#GastTeil {
+  background-color: #412e2e;
+  padding: 5px;
+  border-radius: 5px;
+}
+#KostenTeil {
+  background-color: #353824;
+  padding: 5px;
+  border-radius: 5px;
+}
+.scrollable-container {
+  max-height: 200px;
+  max-width: 400px;
+  min-width: 400px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
