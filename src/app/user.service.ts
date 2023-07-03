@@ -33,10 +33,26 @@ export class UserService {
   saveEvent(event: Event) {
     const currentUser = this.getUserFromLocalStorage();
     if (currentUser) {
+      // Generate a unique ID for the event
+      const newEventId = this.generateUniqueId(currentUser.events);
+  
+      event.id = newEventId; // Assign the generated ID to the event
+  
       currentUser.events.push(event);
       this.saveUserToLocalStorage(currentUser);
     }
   }
+  
+  private generateUniqueId(events: Event[]): number {
+    let maxId = 0;
+    for (const event of events) {
+      if (event.id > maxId) {
+        maxId = event.id;
+      }
+    }
+    return maxId + 1;
+  }
+  
 
   getEvent(id: number): Event | undefined {
     const currentUser = this.getUserFromLocalStorage();

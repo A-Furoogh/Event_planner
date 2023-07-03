@@ -1,7 +1,7 @@
 <body>
-  <div class="wohlpage">
-    <h2>Willkommen, {{ username }}!</h2>
+  <h2>Willkommen, {{ username }}!</h2>
     <h3>Ihre Events:</h3>
+    <button (click)="gotoNewEvent()" class="new-event-button">Neues Event erstellen</button>
     <div class="secondWohlpage">
     <ul>
       <li *ngFor="let event of events">
@@ -45,10 +45,11 @@
           </div>
         </ul>
       </div>
+      <button (click)="deleteEvent(event.id)" class="delete-event-button">Event Löschen</button>
       </li>
     </ul>
     <p *ngIf="events.length === 0" class="no-events">Noch kein Event!</p>
-    <button (click)="gotoNewEvent()" class="new-event-button">Neues Event erstellen</button>
+    
     </div>
-  </div>
+  
 </body>

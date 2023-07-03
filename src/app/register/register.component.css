@@ -6,6 +6,8 @@ body {
   font-family: Arial, sans-serif;
   height: 100vh;
   padding-top: 30px;
+  margin: 0;
+  border-radius: 40px;
 }
 
 form {

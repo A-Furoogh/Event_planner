@@ -5,6 +5,10 @@ body {
   background-position: center;
   font-family: Arial, sans-serif;
   height: auto;
+  width: auto;
+  margin: 0;
+  padding: 20px;
+  border-radius: 40px;
 }
 
 h2 {
@@ -59,13 +63,24 @@ button[type="submit"] {
   background-color: #28a745;
 }
 
-button[type="button"] {
+.addThings {
+  background-color: #28a745;
+  font-size: large;
+}
+.removeThings {
   background-color: #dc3545;
+  font-size: small;
 }
 
 button[type="submit"],
 button[type="button"] {
   margin-top: 10px;
+}
+
+button[type="submit"] {
+  width: 350px;
+  height: 50px;
+  font-size: 26px;
 }
 
 h3 {

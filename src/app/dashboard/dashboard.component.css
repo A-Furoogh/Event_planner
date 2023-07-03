@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  padding: 0;
   background-image: url("forth.jpg");
   background-size: cover;
   background-repeat: repeat-y;
@@ -8,22 +7,16 @@ body {
   font-family: Arial, sans-serif;
   height: auto;
   width: auto;
-  display: flex;
+  display: vertical;
   align-items: center;
   justify-content: left;
+  padding: 20px;
+  border-radius: 40px;
 }
 
-.wohlpage {
-  background-color: rgba(124, 59, 59, 0.8);
-  max-width: 600px;
-  padding: 10px;
-  border-radius: 10px;
-  color: rgb(52, 116, 171);
-  text-align: center;
-}
 .secondWohlpage {
-  background-color: rgba(0, 0, 0, 0.8);
-  max-width: 600px;
+  background-color: rgba(11, 4, 22, 0.664);
+  max-width: 2000px;
   padding: 10px;
   border-radius: 10px;
   color: aliceblue;
@@ -35,12 +28,14 @@ h2 {
   font-size: 36px;
   color: aliceblue;
   text-decoration: aliceblue;
+  text-align: center;
 }
 
 h3 {
   margin-top: 10px;
   color: aliceblue;
   font-size: 26px;
+  text-align: center;
 }
 
 ul {
@@ -51,6 +46,7 @@ ul {
   flex-direction: flex;
   align-items: center;
   text-align: left;
+  min-height: 170px;
 }
 
 li {
@@ -58,7 +54,7 @@ li {
   background-color: rgba(255, 255, 255, 0.1);
   padding: 5px;
   border-radius: 5px;
-  width: 100%;
+  width: auto;
 }
 
 li:nth-child(even) {
@@ -84,7 +80,7 @@ p {
 }
 
 .new-event-button {
-  margin-top: 10px;
+  margin: 5px;
   background-color: #333;
   color: #fff;
   border: none;
@@ -92,6 +88,7 @@ p {
   font-size: 24px;
   border-radius: 5px;
   cursor: pointer;
+  justify-content: center;
 }
 
 .new-event-button:hover {
@@ -103,19 +100,20 @@ p {
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  background-color: #4f4b4b;
+  background-color: #2b2929;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 15px;
 }
 #GastTeil {
-  background-color: #412e2e;
+  background-color: #2e412fe9;
   padding: 5px;
   border-radius: 5px;
 }
 #KostenTeil {
-  background-color: #353824;
+  background-color: #070616e6;
   padding: 5px;
   border-radius: 5px;
+  margin-top: 5px;
 }
 .scrollable-container {
   max-height: 200px;
@@ -123,4 +121,15 @@ p {
   min-width: 400px;
   overflow-x: hidden;
   overflow-y: scroll;
+}
+.delete-event-button {
+  margin: 5px;
+  background-color: #4c0c0c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  justify-content: center;
 }

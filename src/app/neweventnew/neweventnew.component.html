@@ -29,9 +29,9 @@
     <input type="text" [(ngModel)]="guest.phone" name="guestPhone{{i}}">
     <label for="guestAttendantNumber{{i}}">Anzahl der Begleiter</label>
     <input type="number" [(ngModel)]="guest.attendantNumber" name="guestAttendantNumber{{i}}">
-    <button type="button" (click)="removeGuest(i)">Gast löschen</button>
+    <button class="removeThings" type="button" (click)="removeGuest(i)">Gast löschen</button>
   </div>
-  <button type="button" (click)="addGuest()">Gast einfügen</button>
+  <button class="addThings" type="button" (click)="addGuest()">Gast einfügen</button>
 
   <h3>Ausgaben</h3>
   <div class="form-group" *ngFor="let cost of costs; let i = index">
@@ -41,9 +41,9 @@
     <input type="number" [(ngModel)]="cost.costAmount" name="costAmount{{i}}" required>
     <label for="locationIsPaid">schon bezahlt?</label>
     <input type="checkbox" [(ngModel)]="cost.isPaid" name="costIsPaid">
-    <button type="button" (click)="removeCost(i)">Ausgabe löschen</button>
+    <button class="removeThings" type="button" (click)="removeCost(i)">Ausgabe löschen</button>
   </div>
-  <button type="button" (click)="addCost()">Ausgabe einfügen</button>
+  <button class="addThings" type="button" (click)="addCost()">Ausgabe einfügen</button>
 
   <h3>Event-ort</h3>
   <div class="form-group">
@@ -57,7 +57,7 @@
     <input type="checkbox" [(ngModel)]="location.isPaid" name="locationIsPaid">
   </div>
   
-  <button type="submit">Create Event</button>
+  <button type="submit">Event erstellen</button>
 </form>
 </div>
 </body>

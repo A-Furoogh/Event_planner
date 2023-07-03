@@ -7,7 +7,7 @@ export interface User {
   }
   
   export interface Event {
-    id?: number;
+    id: number;
     eventName?: string;
     eventDate?: Date;
     totalCost?: number;

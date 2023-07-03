@@ -29,4 +29,10 @@ export class DashboardComponent implements OnInit {
   gotoNewEvent() {
     this.router.navigate(['/neweventnew']);
   }
+
+  deleteEvent(eventId: number) {
+    this.userService.deleteEvent(eventId);
+     this.events = this.userService.getCurrentUser()?.events as Event[];
+     console.log(this.events);
+  }
 }
