@@ -35,22 +35,31 @@ export class AuthService {
       id: 1,
       eventName: 'Meine erste Party',
       eventDate: new Date(),
-      totalCost: 2500,
-      totalGuests: 60,
+      totalCost: 700,
+      totalGuests: 11,
       guests: [{
         id: 1,
         guestName: 'Mustermann',
         address: 'Ahlen',
         phone: +4915734472831,
         attendantNumber: 4
+      },
+      {
+        id: 2,
+        guestName: 'Musterfrau',
+        address: 'Düsseldorf',
+        phone: +4915734472831,
+        attendantNumber: 7
       }],
       costs: [{
         id: 1,
         costName: 'Kauf von Stühle',
+        costAmount: 500,
         isPaid: true
       }, {
         id: 2,
         costName: 'Kauf von Getränke',
+        costAmount: 200,
         isPaid: false
       }],
       location: {

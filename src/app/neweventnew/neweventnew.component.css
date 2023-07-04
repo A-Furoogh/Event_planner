@@ -41,7 +41,7 @@ input[type="text"],
 input[type="number"],
 input[type="date"],
 input[type="checkbox"] {
-  width: 100%;
+  width: 70%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -87,4 +87,22 @@ h3 {
   font-size: 18px;
   margin-top: 20px;
   margin-bottom: 10px;
+}
+
+.eventPart {
+  background-color: rgba(255, 228, 196, 0.641);
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.guestsPart {
+  background-color: rgba(197, 255, 196, 0.6);
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.costsPart {
+  background-color: rgba(196, 255, 255, 0.614);
+  padding: 5px;
+  border-radius: 15px;
 }

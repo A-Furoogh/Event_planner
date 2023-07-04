@@ -29,6 +29,7 @@ h2 {
   color: aliceblue;
   text-decoration: aliceblue;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 h3 {

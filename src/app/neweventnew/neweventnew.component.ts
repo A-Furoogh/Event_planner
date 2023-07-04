@@ -21,11 +21,11 @@ export class NeweventnewComponent {
 
   createEvent() {
     const event: Event = {
-      id: this.eventIdgenerator(),
+      id: 0,
       eventName: this.eventName,
       eventDate: this.eventDate,
-      totalCost: this.totalCost,
-      totalGuests: this.totalGuests,
+      totalCost: this.costs.reduce((acc, cost) => acc + (cost.costAmount || 0), 0),
+      totalGuests: this.guests.reduce((acc, guest) => acc + (guest.attendantNumber || 0), 0),
       costs: this.costs,
       guests: this.guests,
       location: this.location
@@ -66,16 +66,6 @@ export class NeweventnewComponent {
 
   removeGuest(index: number) {
     this.guests.splice(index, 1);
-  }
-
-  eventIdgenerator() :number {
-    // Überprüfen, ob es bereits eine Event-ID gibt
-    if (localStorage.getItem('eventId') === null) {
-      localStorage.setItem('eventId', '0');
-    }
-    // Event-ID um 1 erhöhen
-    const eventId = Number(localStorage.getItem('eventId')) + 1; 
-    return eventId;
   }
 
 }

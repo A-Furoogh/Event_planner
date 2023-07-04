@@ -9,7 +9,7 @@
           <p>Event-ID: {{ event.id }}</p>
           <p>Event-Name: {{ event.eventName }}</p>
           <p>Event-Datum: {{ event.eventDate | date:'dd-MM-yyy' }}</p>
-          <p>Gesamtkosten: {{ event.totalCost }}</p>
+          <p>Gesamtkosten: {{ event.totalCost }} &#8364;</p>
           <p>Anzahl Gäste: {{ event.totalGuests}}</p>
 
           <h4>Event-Anschrift</h4>
@@ -39,7 +39,7 @@
           <div class="scrollable-container">
             <li *ngFor="let cost of event.costs">
               <p>Ausgabe für: {{ cost.costName }}</p>
-              <p>Kosten: {{ cost.costAmount }}</p>
+              <p>Kosten: {{ cost.costAmount }} &#8364;</p>
               <p>Bezahlt?: {{ cost.isPaid | boolean }}</p>
             </li>
           </div>

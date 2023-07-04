@@ -2,62 +2,57 @@
 <h2>Neues Event erstellen</h2>
 <div class="wrapper">
 <form (submit)="createEvent()">
-  <div class="form-group">
-    <label for="eventName">Event Name</label>
-    <input type="text" [(ngModel)]="eventName" name="eventName" placeholder="Eventname eingeben" required>
+  <div class="eventPart">
+    <div class="form-group">
+      <label for="eventName">Event Name</label>
+      <input type="text" [(ngModel)]="eventName" name="eventName" placeholder="Eventname eingeben" required>
+    </div>
+    <div class="form-group">
+      <label for="eventDate">Event Datum</label>
+      <input type="date" [(ngModel)]="eventDate" name="eventDate" required>
+    </div>
+    
+    <h3>Event-ort</h3>
+    <div class="form-group">
+      <label for="locationName">Ortsname</label>
+      <input type="text" [(ngModel)]="location.locationName" name="locationName">
+      <label for="locationAddress">Adresse</label>
+      <input type="text" [(ngModel)]="location.address" name="locationAddress">
+      <label for="locationCapacity">Kapazität</label>
+      <input type="number" [(ngModel)]="location.capacity" name="locationCapacity">
+      <label for="locationIsPaid">schon bezahlt?</label>
+      <input type="checkbox" [(ngModel)]="location.isPaid" name="locationIsPaid">
+    </div>
   </div>
-  <div class="form-group">
-    <label for="eventDate">Event Datum</label>
-    <input type="date" [(ngModel)]="eventDate" name="eventDate" required>
+  <div class="guestsPart">
+    <h3>Gäste</h3>
+    <div class="form-group" *ngFor="let guest of guests; let i = index">
+      <label for="guestName{{i}}">Gast Name</label>
+      <input type="text" [(ngModel)]="guest.guestName" name="guestName{{i}}" required>
+      <label for="guestAddress{{i}}">Gast Adresse</label>
+      <input type="text" [(ngModel)]="guest.address" name="guestAddress{{i}}">
+      <label for="guestPhone{{i}}">Gast Handynummer</label>
+      <input type="text" [(ngModel)]="guest.phone" name="guestPhone{{i}}">
+      <label for="guestAttendantNumber{{i}}">Anzahl der Begleiter</label>
+      <input type="number" [(ngModel)]="guest.attendantNumber" name="guestAttendantNumber{{i}}">
+      <button class="removeThings" type="button" (click)="removeGuest(i)">Gast löschen</button>
+    </div>
+    <button class="addThings" type="button" (click)="addGuest()">Gast einfügen</button>
   </div>
-  <div class="form-group">
-    <label for="totalCost">Gesamtkosten</label>
-    <input type="number" [(ngModel)]="totalCost" name="totalCost" placeholder="Gesamtkosten eingeben" required>
+  <div class="costsPart">
+    <h3>Ausgaben</h3>
+    <div class="form-group" *ngFor="let cost of costs; let i = index">
+      <label for="costName{{i}}">Ausgabegrund</label>
+      <input type="text" [(ngModel)]="cost.costName" name="costName{{i}}" required>
+      <label for="costAmount{{i}}">Kostenbetrag</label>
+      <input type="number" [(ngModel)]="cost.costAmount" name="costAmount{{i}}" required>
+      <label for="locationIsPaid">schon bezahlt?</label>
+      <input type="checkbox" [(ngModel)]="cost.isPaid" name="costIsPaid">
+      <button class="removeThings" type="button" (click)="removeCost(i)">Ausgabe löschen</button>
+    </div>
+    <button class="addThings" type="button" (click)="addCost()">Ausgabe einfügen</button>
   </div>
-  <div class="form-group">
-    <label for="totalGuests">Anzahl Gäste</label>
-    <input type="number" [(ngModel)]="totalGuests" name="totalGuests" placeholder="Gästenanzahl eingeben" required>
-  </div>
-  
-  <h3>Gäste</h3>
-  <div class="form-group" *ngFor="let guest of guests; let i = index">
-    <label for="guestName{{i}}">Gast Name</label>
-    <input type="text" [(ngModel)]="guest.guestName" name="guestName{{i}}" required>
-    <label for="guestAddress{{i}}">Gast Adresse</label>
-    <input type="text" [(ngModel)]="guest.address" name="guestAddress{{i}}">
-    <label for="guestPhone{{i}}">Gast Handynummer</label>
-    <input type="text" [(ngModel)]="guest.phone" name="guestPhone{{i}}">
-    <label for="guestAttendantNumber{{i}}">Anzahl der Begleiter</label>
-    <input type="number" [(ngModel)]="guest.attendantNumber" name="guestAttendantNumber{{i}}">
-    <button class="removeThings" type="button" (click)="removeGuest(i)">Gast löschen</button>
-  </div>
-  <button class="addThings" type="button" (click)="addGuest()">Gast einfügen</button>
-
-  <h3>Ausgaben</h3>
-  <div class="form-group" *ngFor="let cost of costs; let i = index">
-    <label for="costName{{i}}">Ausgabegrund</label>
-    <input type="text" [(ngModel)]="cost.costName" name="costName{{i}}" required>
-    <label for="costAmount{{i}}">Kostenbetrag</label>
-    <input type="number" [(ngModel)]="cost.costAmount" name="costAmount{{i}}" required>
-    <label for="locationIsPaid">schon bezahlt?</label>
-    <input type="checkbox" [(ngModel)]="cost.isPaid" name="costIsPaid">
-    <button class="removeThings" type="button" (click)="removeCost(i)">Ausgabe löschen</button>
-  </div>
-  <button class="addThings" type="button" (click)="addCost()">Ausgabe einfügen</button>
-
-  <h3>Event-ort</h3>
-  <div class="form-group">
-    <label for="locationName">Ortsname</label>
-    <input type="text" [(ngModel)]="location.locationName" name="locationName">
-    <label for="locationAddress">Adresse</label>
-    <input type="text" [(ngModel)]="location.address" name="locationAddress">
-    <label for="locationCapacity">Kapazität</label>
-    <input type="number" [(ngModel)]="location.capacity" name="locationCapacity">
-    <label for="locationIsPaid">schon bezahlt?</label>
-    <input type="checkbox" [(ngModel)]="location.isPaid" name="locationIsPaid">
-  </div>
-  
-  <button type="submit">Event erstellen</button>
+    <button type="submit">Event erstellen</button>
 </form>
 </div>
 </body>

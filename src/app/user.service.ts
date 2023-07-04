@@ -21,7 +21,7 @@ export class UserService {
     localStorage.setItem(this.currentUserKey, JSON.stringify(user));
   }
 
-  private removeUserFromLocalStorage() {
+  private removeUserFromLocalStorage() {            // Bearbeitungsbedarf
     localStorage.removeItem(this.currentUserKey);
   }
 
@@ -33,10 +33,9 @@ export class UserService {
   saveEvent(event: Event) {
     const currentUser = this.getUserFromLocalStorage();
     if (currentUser) {
-      // Generate a unique ID for the event
       const newEventId = this.generateUniqueId(currentUser.events);
   
-      event.id = newEventId; // Assign the generated ID to the event
+      event.id = newEventId;
   
       currentUser.events.push(event);
       this.saveUserToLocalStorage(currentUser);
@@ -62,7 +61,7 @@ export class UserService {
     return undefined;
   }
 
-  updateEvent(event: Event) {
+  updateEvent(event: Event) {                           // Bearbeitungsbedarf
     const currentUser = this.getUserFromLocalStorage();
     if (currentUser) {
       const index = currentUser.events.findIndex(e => e.id === event.id);
